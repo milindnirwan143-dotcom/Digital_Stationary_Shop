@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Stationery Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+        <nav class="navbar">
+            <div class="container navbar-flex">
+                <div class="navbar-left">
+                    <a class="brand-link" href="index.html">
+                        <img class="brand-logo" src="logo-std.png" alt="Stationery Shop logo">
+                    </a>
+                </div>
+                <div class="navbar-center">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a class="active" href="admin-dashboard.html">Admin</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-right">
+                    <span class="nav-username">Hi, admin</span>
+                    <button class="btn nav-logout-btn">Logout</button>
+                </div>
+            </div>
+        </nav>
+
+    <section class="section container">
+        <h1 class="section-title">Admin Dashboard</h1>
+        <div class="info-card">
+            <p>Welcome Admin. You can add, update, and delete products from backend APIs.</p>
+        </div>
+        <div style="margin: 10px 0;">
+            <a href="add-product.html" class="btn">Go to Add Product Page</a>
+        </div>
+        <br>
+        <div class="info-card">
+            <h2 class="section-title">Add Product</h2>
+            <form id="adminAddProductForm">
+                <input id="adminProductName" type="text" placeholder="Product Name" required>
+                <select id="adminProductCategory" required>
+                    <option value="">Select Category</option>
+                    <option value="Notebooks">Notebooks</option>
+                    <option value="Pens">Pens</option>
+                    <option value="Markers">Markers</option>
+                    <option value="Office">Office</option>
+                    <option value="Art Material">Art Material</option>
+                    <option value="School Kits">School Kits</option>
+                </select>
+                <input id="adminProductPrice" type="number" step="0.01" min="0" placeholder="Price" required>
+                <input id="adminProductImageUrl" type="text" placeholder="Image URL (optional)">
+                <button class="btn" type="submit">Create Product</button>
+            </form>
+            <p id="adminActionMessage" class="muted" style="margin-top: 10px;"></p>
+        </div>
+        <br>
+        <div class="info-card">
+            <h2 class="section-title">Manage Products</h2>
+            <div id="adminProductsList" class="grid product-grid"></div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 Online Stationery Shop</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

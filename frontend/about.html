@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Stationery Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%);
+            line-height: 1.6;
+        }
+
+        .about-hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            padding: 2.5rem 0 2rem;
+        }
+        
+        .about-hero-img {
+            position: relative;
+            flex: 1 1 320px;
+            max-width: 400px;
+            min-width: 260px;
+            height: 300px;
+        }
+
+        .about-hero-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(30, 41, 59, 0.18);
+        }
+        
+        .about-hero-overlay {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: rgba(37, 99, 235, 0.9);
+            color: #fff;
+            padding: 0.5rem 1.2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 8px rgba(30, 41, 59, 0.2);
+        }
+        
+        .about-hero-content {
+            flex: 2 1 320px;
+            min-width: 260px;
+        }
+        
+        .about-hero-content h1 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 0.7rem;
+            color: #1d3557;
+            font-weight: 700;
+        }
+        
+        .about-hero-content p {
+            color: #374151;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+        
+        .cta-btn {
+            background: #2563eb;
+            color: #fff;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .about-section, .journey-section, .choose-section, .products-section, .testimonial-section {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(30, 41, 59, 0.12);
+            margin: 2.5rem auto;
+            padding: 2.5rem;
+            max-width: 1000px;
+        }
+        
+        .about-section h2, .journey-section h2, .choose-section h2, .products-section h2, .testimonial-section h2 {
+            color: #2563eb;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .choose-list, .products-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            list-style: none;
+        }
+        
+        .choose-list li, .products-list li {
+            background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            box-shadow: 0 4px 12px rgba(30, 41, 59, 0.1);
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            flex: 1 1 200px;
+            transition: transform 0.2s;
+        }
+        
+        .choose-list li:hover, .products-list li:hover {
+            transform: translateY(-3px);
+        }
+        
+        .choose-list li span, .products-list li span {
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+        
+        .tagline {
+            text-align: center;
+            font-size: 1.4rem;
+            color: #1d3557;
+            margin: 3rem 0 2rem;
+            font-weight: 600;
+            background: rgba(37, 99, 235, 0.1);
+            padding: 1.5rem;
+            border-radius: 16px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .testimonial-section {
+            text-align: center;
+        }
+        
+        .testimonial-card {
+            display: inline-block;
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(30, 41, 59, 0.1);
+            padding: 1.8rem;
+            margin: 1rem 0.5rem;
+            max-width: 350px;
+            border-left: 4px solid #2563eb;
+        }
+        
+        .testimonial-card p {
+            font-style: italic;
+            color: #374151;
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-card .customer {
+            font-weight: 700;
+            color: #2563eb;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-hero {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+            .about-hero-img {
+                height: 250px;
+                max-width: 100%;
+            }
+            .about-section, .journey-section, .choose-section, .products-section, .testimonial-section {
+                margin: 1.5rem 1rem;
+                padding: 1.5rem;
+            }
+            .choose-list li, .products-list li {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar (same as before) -->
+    <nav class="navbar">
+        <div class="container navbar-flex">
+            <div class="navbar-left">
+                <a class="brand-link" href="index.html">
+                    <img class="brand-logo" src="logo-std.png" alt="Stationery Shop logo">
+                </a>
+            </div>
+            <div class="navbar-center">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                    <li><a class="active" href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                </ul>
+            </div>
+            <div class="navbar-right">
+                <span class="nav-username" id="userGreeting">Hi, Guest</span>
+                <button class="btn nav-logout-btn" id="loginLogoutBtn">LogIn</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="about-hero container">
+        <div class="about-hero-img">
+            <img src="https://i.ibb.co/Q3rKLYJd/Whats-App-Image-2026-04-23-at-3-13-08-PM.jpg" alt="Our Stationery Shop" loading="lazy">
+            <div class="about-hero-overlay">10+ Years Trusted Shop</div>
+        </div>
+        <div class="about-hero-content">
+            <h1>Serving Customers for 10+ Years – Now Online</h1>
+            <p>We started as a small local shop, and today we are proud to serve students, teachers, and office workers both in our community and online. Your trust has made us a household name for all stationery needs.</p>
+            <button class="cta-btn" onclick="window.location.href='products.html'">Shop Now</button>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <section class="about-section">
+        <h2>Our Story</h2>
+        <p>More than a decade ago, our journey began in a cozy corner of the neighborhood. With a few shelves and a big dream, we opened our doors to students and families looking for quality stationery. Over the years, thanks to your support, we have grown into a trusted shop known for genuine products and friendly service.</p>
+    </section>
+
+    <section class="journey-section">
+        <h2>Our Journey</h2>
+        <p>For over 10 years, we have built strong relationships with our customers. We remember the faces of children who bought their first notebooks, and now see them return as college students or young professionals. Our shop is more than a business – it is a part of the community.</p>
+    </section>
+
+    <section class="choose-section">
+        <h2>Why Choose Us?</h2>
+        <ul class="choose-list">
+            <li><span>✅</span> Trusted for 10+ years</li>
+            <li><span>📦</span> Genuine products</li>
+            <li><span>😊</span> Friendly service</li>
+            <li><span>💰</span> Best prices</li>
+        </ul>
+    </section>
+
+    <section class="products-section">
+        <h2>What We Offer</h2>
+        <ul class="products-list">
+            <li><span>📚</span> School stationery</li>
+            <li><span>🖊️</span> Pens & pencils</li>
+            <li><span>🗂️</span> Office supplies</li>
+            <li><span>🎨</span> Art materials</li>
+        </ul>
+    </section>
+
+    <div class="tagline">
+        From school days to office work — we are always with you.
+    </div>
+
+    <section class="testimonial-section">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial-card">
+            <p>"Best stationery shop! Quality products at reasonable prices."</p>
+            <div class="customer">– Vishal Girhepunje</div>
+        </div>
+        <div class="testimonial-card">
+            <p>"Reliable service for office supplies. Highly recommended!"</p>
+            <div class="customer">– Yash Lanjewar</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Online Stationery Shop. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Dynamic username (same as index.html)
+        function checkUserLogin() {
+            const user = JSON.parse(localStorage.getItem('currentUser')) || null;
+            const userGreeting = document.getElementById('userGreeting');
+            const loginLogoutBtn = document.getElementById('loginLogoutBtn');
+            
+            if (user && user.username) {
+                userGreeting.textContent = `Hi, ${user.username}`;
+                loginLogoutBtn.textContent = 'LogOut';
+                loginLogoutBtn.onclick = function() {
+                    localStorage.removeItem('currentUser');
+                    checkUserLogin();
+                };
+            } else {
+                userGreeting.textContent = 'Hi, Guest';
+                loginLogoutBtn.textContent = 'LogIn';
+                loginLogoutBtn.onclick = function() {
+                    const username = prompt('Enter username:');
+                    if (username) {
+                        localStorage.setItem('currentUser', JSON.stringify({username}));
+                        checkUserLogin();
+                    }
+                };
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', checkUserLogin);
+    </script>
+</body>
+</html>

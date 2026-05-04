@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In / Sign Up - Online Stationery Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+        <nav class="navbar">
+            <div class="container navbar-flex">
+                <div class="navbar-left">
+                    <a class="brand-link" href="index.html">
+                        <img class="brand-logo" src="logo-std.png" alt="Stationery Shop logo">
+                    </a>
+                </div>
+                <div class="navbar-center">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-right">
+                    <span class="nav-username">Hi, admin</span>
+                    <button class="btn nav-logout-btn">Logout</button>
+                </div>
+            </div>
+        </nav>
+        <main class="container auth-wrap">
+                <section class="auth-card">
+            <div class="tab-row">
+                <button id="tabLogin" class="btn tab-btn active" type="button">Login</button>
+                <button id="tabSignup" class="btn tab-btn" type="button">Sign Up</button>
+            </div>
+
+            <section id="loginSection" class="auth-section">
+                <h1 class="section-title">Login</h1>
+                <p class="muted">Login as admin or user.</p>
+                <p class="muted" style="margin-top: 0.5rem;">Default admin: <strong>admin</strong> / <strong>admin123</strong></p>
+                <br>
+                <form id="loginForm">
+                    <input id="username" type="text" placeholder="Username" required>
+                    <input id="password" type="password" placeholder="Password" required>
+                    <button class="btn" type="submit">Sign In</button>
+                </form>
+                <p id="loginError" class="error-text" style="margin-top: 10px;"></p>
+            </section>
+
+            <section id="signupSection" class="auth-section" style="display: none;">
+                <h1 class="section-title">Create an Account</h1>
+                <p class="muted">Register as a new user to access your dashboard and shopping cart.</p>
+                <br>
+                <form id="registerForm">
+                    <input id="registerUsername" type="text" placeholder="Username" required>
+                    <input id="registerPassword" type="password" placeholder="Password" required>
+                    <input id="registerConfirmPassword" type="password" placeholder="Confirm Password" required>
+                    <button class="btn" type="submit">Sign Up</button>
+                </form>
+                <p id="registerSuccess" class="success-text" style="margin-top: 10px;"></p>
+                <p id="registerError" class="error-text" style="margin-top: 10px;"></p>
+            </section>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Online Stationery Shop</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const tabLogin = document.getElementById("tabLogin");
+        const tabSignup = document.getElementById("tabSignup");
+        const loginSection = document.getElementById("loginSection");
+        const signupSection = document.getElementById("signupSection");
+
+        tabLogin?.addEventListener("click", () => {
+            tabLogin.classList.add("active");
+            tabSignup.classList.remove("active");
+            loginSection.style.display = "block";
+            signupSection.style.display = "none";
+        });
+
+        tabSignup?.addEventListener("click", () => {
+            tabSignup.classList.add("active");
+            tabLogin.classList.remove("active");
+            loginSection.style.display = "none";
+            signupSection.style.display = "block";
+        });
+    </script>
+</body>
+</html>
+

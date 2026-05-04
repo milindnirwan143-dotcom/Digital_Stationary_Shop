@@ -1,0 +1,65 @@
+</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var logoutBtn = document.querySelector('.nav-logout-btn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function() {
+                    localStorage.removeItem('token');
+                    localStorage.removeItem('role');
+                    localStorage.removeItem('username');
+                    window.location.href = 'auth.html';
+                });
+            }
+        });
+    </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Stationery Shop - Contact</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+        <nav class="navbar">
+            <div class="container navbar-flex">
+                <div class="navbar-left">
+                    <a class="brand-link" href="index.html">
+                        <img class="brand-logo" src="logo-std.png" alt="Stationery Shop logo">
+                    </a>
+                </div>
+                <div class="navbar-center">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a class="active" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-right">
+                    <span class="nav-username">Hi, admin</span>
+                    <button class="btn nav-logout-btn">Logout</button>
+                </div>
+            </div>
+        </nav>
+
+    <section class="section container">
+        <h1 class="section-title">Contact Us</h1>
+        <div class="info-card">
+            <form id="contactForm">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button class="btn" type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 Online Stationery Shop</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
