@@ -127,9 +127,9 @@ Contributions are welcome! Feel free to fork this repo and submit a pull request
 
 ## 📬 Contact
 
-- Name: Vishal Girhepunje  
-- Email: your-email@example.com  
-- LinkedIn: your-linkedin-profile  
+- Name: Milind Nirwan 
+- Email: milindnirwan143@gmail.com  
+- LinkedIn: your-[linkedin-profile](https://www.linkedin.com/in/milind-nirwan-539787219/)  
 
 ---
 
